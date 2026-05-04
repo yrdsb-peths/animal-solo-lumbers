@@ -7,6 +7,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Elephant extends Actor
 {
+    GreenfootSound elephantsound = new GreenfootSound("vine-boom.mp3");
+    GreenfootImage idle = new GreenfootImage();
     /**
      * Act - do whatever the Elephant wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -35,6 +37,7 @@ public class Elephant extends Actor
             MyWorld world = (MyWorld) getWorld();
             world.createApple();
             world.increaseScore(); 
+            elephantsound.play();
         }
     }
 }
