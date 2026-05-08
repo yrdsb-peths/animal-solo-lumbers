@@ -24,6 +24,7 @@ public class TitleScreen extends World
 
     public void act()
     {
+        //when u press space, the game will start 
         if(Greenfoot.isKeyDown("space"))
         {
             MyWorld gameWorld = new MyWorld();
@@ -37,6 +38,7 @@ public class TitleScreen extends World
      */
     private void prepare()
     {
+        //sets the labels to set places and prevents them from moving
         Elephant elephant = new Elephant();
         addObject(elephant,300,200);
         Label label = new Label("press space to start", 50);

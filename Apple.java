@@ -17,6 +17,7 @@ public class Apple extends Actor
     public void act()
     {
         // Add your action code here.
+        //found the file name of the apple and scaled it because it was too large
         GreenfootImage image = new GreenfootImage("apple2.png");
         image.scale(50, 50);
         setImage(image);
@@ -24,7 +25,9 @@ public class Apple extends Actor
         int y = getY() + speed;
         setLocation(x,y);
         
+        //references the world
         MyWorld world = (MyWorld) getWorld();
+        //adds the gameover once u die 
         if(getY() >= world.getHeight())
         {
             world.gameOver();

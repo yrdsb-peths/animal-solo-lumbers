@@ -43,6 +43,7 @@ public class MyWorld extends World {
         Apple apple = new Apple();
         //changes the speed of the apple falling every 5 seconds
         apple.setSpeed(level);
+        //falls randomly and sets the place it falls
         int x = Greenfoot.getRandomNumber(600);
         int y = 0;
         addObject(apple, x, y);

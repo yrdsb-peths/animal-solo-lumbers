@@ -7,12 +7,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Elephant extends Actor
 {
+    //found the sound for what happens when u touch the apple
     GreenfootSound elephantsound = new GreenfootSound("vine-boom.mp3");
     GreenfootImage[] idleRight = new GreenfootImage[8];
     GreenfootImage[] idleLeft = new GreenfootImage[8];
     
     String facing = "right";
     
+    //creates a new timer
     SimpleTimer animationTimer = new SimpleTimer();
     
     /**
@@ -22,7 +24,7 @@ public class Elephant extends Actor
     
     public Elephant()
     {
-        
+        //these are all for animations and also wherever the elephant is facing
         for(int i = 0; i < idleRight.length; i++)
         {
             idleRight[i] = new GreenfootImage("images/elephant_idle/idle" + i + ".png");
@@ -64,6 +66,7 @@ public class Elephant extends Actor
     public void act()
     {
         // Add your action code here.
+        //this is the code for how the elephant moves 
         if(Greenfoot.isKeyDown("left"))
         {
             move(-2);
@@ -83,6 +86,8 @@ public class Elephant extends Actor
     
     public void eat()
     {
+        //destroys apple class, increases score, creates a new apple and 
+        //plays a sound for user feedback
         if(isTouching(Apple.class))
         {
             removeTouching(Apple.class);
